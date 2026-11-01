@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="CLI Arguments" tests="4" assertions="121" errors="0" failures="0" skipped="0" time="6.145470">
+    <testsuite name="ContentApiTest" file="D:\xampp\htdocs\anshpackersmovers\tests\feature\ContentApiTest.php" tests="3" assertions="87" errors="0" failures="0" skipped="0" time="5.921671">
+      <testcase name="testAdminOrderAndBlogActionsSitOnTheRight" file="D:\xampp\htdocs\anshpackersmovers\tests\feature\ContentApiTest.php" line="37" class="ContentApiTest" classname="ContentApiTest" assertions="14" time="4.971164"/>
+      <testcase name="testEachCategoryFieldIsStoredAndReturned" file="D:\xampp\htdocs\anshpackersmovers\tests\feature\ContentApiTest.php" line="62" class="ContentApiTest" classname="ContentApiTest" assertions="29" time="0.559057"/>
+      <testcase name="testEachPostFieldIsStoredAndReturned" file="D:\xampp\htdocs\anshpackersmovers\tests\feature\ContentApiTest.php" line="116" class="ContentApiTest" classname="ContentApiTest" assertions="44" time="0.391450"/>
+    </testsuite>
+    <testsuite name="ServiceContentTest" file="D:\xampp\htdocs\anshpackersmovers\tests\feature\ServiceContentTest.php" tests="1" assertions="34" errors="0" failures="0" skipped="0" time="0.223799">
+      <testcase name="testPublishedServiceIsStoredAndReturned" file="D:\xampp\htdocs\anshpackersmovers\tests\feature\ServiceContentTest.php" line="36" class="ServiceContentTest" classname="ServiceContentTest" assertions="34" time="0.223799"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

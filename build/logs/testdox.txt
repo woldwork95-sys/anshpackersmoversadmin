@@ -1,0 +1,8 @@
+Content Api
+ [x] Admin order and blog actions sit on the right
+ [x] Each category field is stored and returned
+ [x] Each post field is stored and returned
+
+Service Content
+ [x] Published service is stored and returned
+

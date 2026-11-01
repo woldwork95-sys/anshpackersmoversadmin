@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>CMS test report — Ansh Packers &amp; Movers</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --text: #1f2933;
+            --muted: #52606d;
+            --line: #d9e2ec;
+            --bg: #f5f7fa;
+            --card: #ffffff;
+            --pass: #0e7c3a;
+            --fail: #b42318;
+            --skip: #8a6116;
+            --na: #3e4c59;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            color: var(--text);
+            background: var(--bg);
+            font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+        }
+        header, main { width: min(1100px, calc(100% - 2rem)); margin: 0 auto; }
+        header { padding: 1.5rem 0 0.5rem; }
+        h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 0.35rem; }
+        h2 { font-size: 1.25rem; margin: 2rem 0 0.75rem; }
+        h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; }
+        p { margin: 0.4rem 0; }
+        a { color: #0b5cab; }
+        .meta { color: var(--muted); }
+        .banner {
+            margin: 1rem 0;
+            padding: 0.9rem 1rem;
+            border: 1px solid #f0b4ae;
+            border-left: 6px solid var(--fail);
+            background: #fff6f5;
+            border-radius: 0.5rem;
+        }
+        .cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.75rem; margin: 1rem 0; }
+        .card { background: var(--card); border: 1px solid var(--line); border-radius: 0.6rem; padding: 0.8rem; }
+        .card strong { display: block; font-size: 1.45rem; }
+        .wrap { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 0.6rem; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+        th, td { text-align: left; vertical-align: top; padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--line); }
+        th { background: #eef2f6; }
+        .status { font-weight: 700; white-space: nowrap; }
+        .pass { color: var(--pass); }
+        .fail { color: var(--fail); }
+        .skip { color: var(--skip); }
+        .na { color: var(--na); }
+        code, pre { font-family: Consolas, "Courier New", monospace; }
+        pre { overflow-x: auto; padding: 0.8rem; background: #102a43; color: #f0f4f8; border-radius: 0.5rem; }
+        footer { color: var(--muted); padding: 2rem 0; }
+        @media (max-width: 800px) {
+            .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            header, main { width: min(1100px, calc(100% - 1rem)); }
+        }
+        @media (max-width: 480px) {
+            .cards { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <p class="meta">Ansh Packers &amp; Movers</p>
+    <h1>Dynamic Block CMS test report</h1>
+    <p class="meta">Generated 2026-10-27 19:26:35 CET from the PHP clock on the test machine. CodeIgniter application timezone is UTC.</p>
+</header>
+<main>
+    <section class="banner" role="status">
+        <strong>Overall result: not production-ready.</strong>
+        <p>The automated suite passed. One executed security check failed: the CodeIgniter debug toolbar is visible because the application environment is development. Several browser checks that would change live records were not run.</p>
+    </section>
+
+    <section aria-labelledby="summary-heading">
+        <h2 id="summary-heading">Summary</h2>
+        <div class="cards">
+            <article class="card"><span>Total</span><strong>86</strong></article>
+            <article class="card"><span class="status pass">Passed</span><strong>72</strong></article>
+            <article class="card"><span class="status fail">Failed</span><strong>1</strong></article>
+            <article class="card"><span class="status skip">Skipped</span><strong>0</strong></article>
+            <article class="card"><span class="status na">Not executed</span><strong>13</strong></article>
+        </div>
+        <p>72 passed + 1 failed + 0 skipped + 13 not executed = 86 recorded results.</p>
+    </section>
+
+    <section aria-labelledby="environment-heading">
+        <h2 id="environment-heading">Environment</h2>
+        <div class="wrap">
+            <table>
+                <tbody>
+                    <tr><th scope="row">Project</th><td>Ansh Packers &amp; Movers, CodeIgniter 4 Dynamic Block CMS</td></tr>
+                    <tr><th scope="row">PHP</th><td>8.3.36, ZTS Visual C++ 2019 x64, run from the XAMPP PHP binary</td></tr>
+                    <tr><th scope="row">CodeIgniter</th><td>4.7.5, confirmed by <code>CodeIgniter::CI_VERSION</code> and the spark banner</td></tr>
+                    <tr><th scope="row">PHPUnit</th><td>11.5.57, configuration <code>phpunit.dist.xml</code></td></tr>
+                    <tr><th scope="row">Automated database</th><td>SQLite in memory, switched automatically when the environment is testing. The live MySQL database was not migrated, reset, or deleted by PHPUnit.</td></tr>
+                    <tr><th scope="row">Browser checks</th><td>Cursor browser against the local Apache site. Viewports measured: 1280×900, 768×1024, and 390×844.</td></tr>
+                    <tr><th scope="row">Live data used</th><td>Read-only use of the existing category and two published blocks. No live row was created or deleted during this audit.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section aria-labelledby="commands-heading">
+        <h2 id="commands-heading">Commands and actual output</h2>
+        <pre>D:\xampp\php\php.exe spark migrate:status
+D:\xampp\php\php.exe vendor\phpunit\phpunit\phpunit --no-coverage</pre>
+        <p>Migration status, read only, showed six App migrations and no pending migration: CreateAdminsTable, CreateBlocksAndCategories, AddCategoryAndBlockDetails, WidenBlockContent, AddBlockSeo, RequireBlockRobots. Batches 1 through 6.</p>
+        <p>Final PHPUnit run after the form correction: <strong>OK (47 tests, 630 assertions)</strong>. Exit code 0. Time about 7.4 seconds. An earlier run in this audit, before that correction, was OK (47 tests, 627 assertions). The editor filter was then rerun alone: OK (6 tests, 124 assertions).</p>
+    </section>
+
+    <section aria-labelledby="phpunit-heading">
+        <h2 id="phpunit-heading">Automated suite</h2>
+        <p>Every row below passed in the final 47-test run. Expected result is the behavior asserted by that test. Actual result is that PHPUnit reported the test passed. These tests use isolated SQLite data.</p>
+
+        <h3>Authentication — 13 passed</h3>
+        <div class="wrap">
+            <table>
+                <thead><tr><th>ID</th><th>Description</th><th>Expected</th><th>Actual</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>QA-AUTH-01</td><td>Login page renders the form</td><td>Form and CSRF field are present</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-AUTH-02</td><td>Valid username login</td><td>Session starts and the dashboard opens</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-AUTH-03</td><td>Email login ignores case</td><td>The matching account signs in</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-AUTH-04</td><td>Supplied redirect URL is ignored</td><td>Login does not follow an external redirect</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-AUTH-05</td><td>Invalid password</td><td>Generic failure and no authenticated session</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-AUTH-06</td><td>Unknown user</td><td>Same generic failure</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-AUTH-07</td><td>Missing credentials</td><td>Both fields report that a value is required</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-AUTH-08</td><td>Logout</td><td>Auth session keys are removed and login is shown</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-AUTH-09</td><td>Protected routes and logout without a session</td><td>Redirect to login; no auth flag is created</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-AUTH-10</td><td>Authenticated dashboard</td><td>Page renders and does not show the password or its hash</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-AUTH-11</td><td>Signed-in user opens login</td><td>Redirect to the dashboard</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-AUTH-12</td><td>Login without a CSRF token</td><td>Rejected; password is not stored in the session</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-AUTH-13</td><td>Repeated failed logins</td><td>Throttled after five failures</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Dashboard — 6 passed</h3>
+        <div class="wrap">
+            <table>
+                <thead><tr><th>ID</th><th>Description</th><th>Expected</th><th>Actual</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>QA-DASH-01</td><td>Dashboard requires authentication</td><td>Guest is redirected to login</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-DASH-02</td><td>Empty statistics</td><td>Zero counts and an empty recent list</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-DASH-03</td><td>Statistics use database rows</td><td>Counts match inserted rows</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-DASH-04</td><td>Empty blocks, categories, and create page</td><td>Empty copy is shown; create form is available</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-DASH-05</td><td>Settings and alerts</td><td>Alerts render; password hash is absent</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-DASH-06</td><td>Mobile navigation markup</td><td>Menu button, aria attributes, and the 767px CSS rule exist</td><td>Passed. This checks markup, not a rendered viewport.</td><td class="status pass">PASS</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Categories and blocks — 10 passed</h3>
+        <div class="wrap">
+            <table>
+                <thead><tr><th>ID</th><th>Description</th><th>Expected</th><th>Actual</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>QA-CAT-01</td><td>Guest cannot change categories or blocks</td><td>Write requests redirect and do not persist</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-CAT-02</td><td>Create category validation and generated slug</td><td>Invalid input is rejected; a blank slug is generated</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-CAT-03</td><td>Update category and duplicate slug</td><td>Update saves; a duplicate slug is rejected</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-CAT-04</td><td>Delete confirmation and dependency check</td><td>A category that still has blocks is not deleted from the admin action</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-CAT-05</td><td>Database foreign key</td><td>Deleting a used category raises a database exception</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BLK-01</td><td>Create and update a block</td><td>Bad category and status are rejected; slug is unique; script markup is removed; timestamps stay consistent</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BLK-02</td><td>Preview escapes a script-like title</td><td>The title is shown as escaped text</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BLK-03</td><td>Search, filters, pagination, and a SQL-like query</td><td>Filters match the right rows; page 2 works; a quote-or-true query returns no rows</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BLK-04</td><td>Missing records and missing CSRF</td><td>Missing ids 404; a post without CSRF does not insert</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BLK-05</td><td>Category search</td><td>The slug search returns only the matching category</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Rich text editor — 6 passed</h3>
+        <div class="wrap">
+            <table>
+                <thead><tr><th>ID</th><th>Description</th><th>Expected</th><th>Actual</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>QA-ED-01</td><td>Editor assets, collapsed search section, and default submit button</td><td>Jodit is loaded. The first submit button in the block form has no name.</td><td>Passed, including the assertion added for the Enter-key fix</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-ED-02</td><td>Formatting persists; drafts stay private</td><td>Allowed formatting is stored and rendered; a draft URL is not public</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-ED-03</td><td>Unsafe stored HTML is removed on render</td><td>Dangerous markup is stripped even if it was stored</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-ED-04</td><td>Empty editor content</td><td>An empty paragraph is stored as null</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-ED-05</td><td>Image upload</td><td>Guests are blocked. PHP, double extensions, text, SVG, and oversized files are rejected. A JPEG is re-encoded.</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-ED-06</td><td>Malicious URLs in the sanitizer</td><td>Scriptable and traversal image and link URLs are removed</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>SEO — 7 passed</h3>
+        <div class="wrap">
+            <table>
+                <thead><tr><th>ID</th><th>Description</th><th>Expected</th><th>Actual</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>QA-SEO-01</td><td>Saved metadata appears once and is escaped</td><td>One title, description, canonical, robots tag, and Open Graph title. A breakout string is escaped. A posted image filename is ignored. The canonical host comes from configuration.</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-SEO-02</td><td>Empty metadata</td><td>Title and excerpt are used. An empty description tag is omitted.</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-SEO-03</td><td>Length, robots, and duplicate slug validation</td><td>Overlong fields and invalid robots are rejected. Empty robots default to index, follow.</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-SEO-04</td><td>Slug changes and draft protection</td><td>Old published slugs return 301. Drafts and their old slugs 404. Another block cannot take a redirect slug.</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-SEO-05</td><td>Sitemap and noindex pages</td><td>Only the indexable published page is listed. Homepage and admin stay noindex.</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-SEO-06</td><td>Open Graph image upload and removal</td><td>A re-encoded file is referenced once, then removed</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-SEO-07</td><td>Missing pages</td><td>Unknown slugs raise a 404. The 404 view is noindex.</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Framework samples and migration — 6 passed</h3>
+        <p>The four sample tests ship with CodeIgniter. They passed, and they do not prove CMS behavior.</p>
+        <div class="wrap">
+            <table>
+                <thead><tr><th>ID</th><th>Description</th><th>Expected</th><th>Actual</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>QA-FW-01</td><td>Example database model find</td><td>Sample model returns its row</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-FW-02</td><td>Example soft delete</td><td>Sample soft-deleted row remains</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-FW-03</td><td>Example session</td><td>A session value can be set and read</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-FW-04</td><td>Application path constant</td><td>APPPATH is defined</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-FW-05</td><td>Base URL constant</td><td>The test base URL is set</td><td>Passed</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-MIG-01</td><td>Live migration status</td><td>Every CMS migration is recorded and none is pending</td><td>Six migrations listed, none pending. No migration was rolled back.</td><td class="status pass">PASS</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section aria-labelledby="browser-heading">
+        <h2 id="browser-heading">Browser checks</h2>
+        <p>These were performed on the local site. Live records were only read, searched, and used to sign in and out.</p>
+        <div class="wrap">
+            <table>
+                <thead><tr><th>ID</th><th>Description</th><th>Expected</th><th>Actual</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>QA-BR-01</td><td>Signed-in request for the login page</td><td>Dashboard opens instead of the login form</td><td>The browser landed on the dashboard</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-02</td><td>Dashboard numbers and recent blocks</td><td>Counts match the database: 2 blocks, 2 published, 0 drafts, 1 category</td><td>The page showed 2, 2, 0, and 1. Recent titles were Wrapped furniture and Kitchen pack.</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-03</td><td>Dashboard at 1280px</td><td>No horizontal page overflow; desktop navigation is visible</td><td>Scroll width equaled 1280. The sidebar was static and the menu button was hidden.</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-04</td><td>Blocks list</td><td>Both published blocks are listed with view, edit, and delete actions</td><td>Both rows were present, with category Local shifting and status Published</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-05</td><td>Block search</td><td>Searching for kitchen returns only Kitchen pack</td><td>The address gained q=kitchen and the table contained only Kitchen pack</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-06</td><td>Editor reload</td><td>Saved formatting and search fields reload; search stays collapsed</td><td>Heading, strong text, and the Blankets list reloaded. Meta title and description reloaded. The search panel was closed.</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-07</td><td>Editor at 1280px</td><td>The editor fits without page overflow</td><td>Editor width 793. Page scroll width 1265, inside the viewport.</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-08</td><td>Editor at 768px</td><td>The editor fits. At this width the design still uses the desktop sidebar.</td><td>No page overflow. Editor width 469. Menu display was none and the sidebar was static.</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-09</td><td>Editor at 390px</td><td>The page does not overflow and the sidebar starts off-screen</td><td>Page scroll width 390. Editor width 319. Sidebar was fixed and off-screen. Menu was collapsed. Bold remained visible.</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-10</td><td>Phone editor toolbar</td><td>Collapsed tools can be opened</td><td>Show all revealed align, link, image, table, undo, redo, and source mode</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-11</td><td>Phone menu</td><td>The drawer opens</td><td>Menu became expanded. The sidebar had the open class, left edge 0, width 220.</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-12</td><td>Blocks table at 390px</td><td>The page does not overflow; a wide table can scroll in its container</td><td>Page scroll width 390. Table wrapper client width 319 and scroll width 369.</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-13</td><td>Categories at 390px</td><td>The existing category is readable and the page does not overflow</td><td>Local shifting, slug local-shifting, and Active were shown. Page scroll width 390.</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-14</td><td>Public block page at 390px</td><td>One canonical, one description, index/follow, formatted content, no script in the article</td><td>Those counts were 1, 1, and index, follow. The article contained strong text and no script. Page scroll width 390.</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-15</td><td>Missing public slug</td><td>404 page, noindex, no stack trace</td><td>Title was 404 - Page Not Found. Robots were noindex, nofollow. Visible text was 404 Page Not Found.</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-16</td><td>Logout</td><td>The login page says the user signed out</td><td>Login page showed “You have been signed out.”</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-17</td><td>Admin blocks after logout</td><td>Redirect to login</td><td>The blocks address redirected to login and said “Please sign in to continue.”</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-18</td><td>Login page at 390px</td><td>No page overflow and noindex</td><td>Scroll width 390. Robots were noindex, nofollow.</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-19</td><td>Incorrect password</td><td>Stay on login with a generic error</td><td>The page stayed on login and said the credentials do not match</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-20</td><td>Valid login</td><td>Dashboard opens for the signed-in account</td><td>The dashboard opened and showed the signed-in label</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-21</td><td>Settings</td><td>Username is shown and the password hash is not</td><td>The account section showed the username. The word password_hash was absent. No page overflow at 390.</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-22</td><td>Homepage metadata</td><td>One description, noindex/nofollow, no canonical</td><td>Description count 1, robots noindex, nofollow, canonical count 0. The page is still the framework welcome screen and prints the development environment.</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-23</td><td>Live sitemap</td><td>XML listing only the two public block URLs</td><td>Status 200, content type application/xml, two loc entries, both block slugs present, homepage absent</td><td class="status pass">PASS</td></tr>
+                    <tr><td>QA-BR-24</td><td>Default block-form submit control after the fix</td><td>The first submit button does not force draft</td><td>The first button was a visually hidden Save control with no name. Save draft and Update remained available.</td><td class="status pass">PASS</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section aria-labelledby="security-heading">
+        <h2 id="security-heading">Security check that failed</h2>
+        <div class="wrap">
+            <table>
+                <thead><tr><th>ID</th><th>Description</th><th>Expected</th><th>Actual</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td>QA-SEC-01</td>
+                        <td>Public and admin HTML do not expose internal diagnostics</td>
+                        <td>No debug toolbar on the homepage, a public block, or an admin page</td>
+                        <td>The debug toolbar element was present on the homepage, the public block page, and admin pages. The toolbar UI exposes queries, files, routes, and a session section. The environment value in configuration is development. Toolbar contents are not copied here.</td>
+                        <td class="status fail">FAIL</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section aria-labelledby="not-run-heading">
+        <h2 id="not-run-heading">Not executed</h2>
+        <p>These were deliberately left unrun so live records would not be changed, or because the live data and this browser session could not cover them. They are not passes.</p>
+        <div class="wrap">
+            <table>
+                <thead><tr><th>ID</th><th>Description</th><th>Why it was not run</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>QA-NE-01</td><td>Block or category pagination in the browser</td><td>The live lists have one page. Pagination passed only in PHPUnit.</td><td class="status na">NOT EXECUTED</td></tr>
+                    <tr><td>QA-NE-02</td><td>Create, update, and delete a category in the browser</td><td>Not run against the live database. Covered by PHPUnit on SQLite.</td><td class="status na">NOT EXECUTED</td></tr>
+                    <tr><td>QA-NE-03</td><td>Create, delete, or change draft/published state in the browser</td><td>Not run against the live database. Covered by PHPUnit on SQLite.</td><td class="status na">NOT EXECUTED</td></tr>
+                    <tr><td>QA-NE-04</td><td>Image upload from the browser</td><td>Not uploaded in this session. PHPUnit covers validation and re-encoding.</td><td class="status na">NOT EXECUTED</td></tr>
+                    <tr><td>QA-NE-05</td><td>Slug change and 301 in the browser</td><td>The live slug was not changed. PHPUnit covers the redirect.</td><td class="status na">NOT EXECUTED</td></tr>
+                    <tr><td>QA-NE-06</td><td>Open Graph image upload in the browser</td><td>No image was uploaded. PHPUnit covers it.</td><td class="status na">NOT EXECUTED</td></tr>
+                    <tr><td>QA-NE-07</td><td>Missing CSRF token in the browser</td><td>Not submitted from the browser. PHPUnit covers login and category posts.</td><td class="status na">NOT EXECUTED</td></tr>
+                    <tr><td>QA-NE-08</td><td>Blocks table at 768px</td><td>The table was measured at 390 and 1280, not at 768.</td><td class="status na">NOT EXECUTED</td></tr>
+                    <tr><td>QA-NE-09</td><td>Login page overflow at 1280 and 768</td><td>The login page was measured at 390 only.</td><td class="status na">NOT EXECUTED</td></tr>
+                    <tr><td>QA-NE-10</td><td>Press Enter in the live published editor</td><td>Not pressed, so the published row was not saved again. The button order was inspected instead.</td><td class="status na">NOT EXECUTED</td></tr>
+                    <tr><td>QA-NE-11</td><td>Firefox, Safari, and a separate Edge session</td><td>Only the Cursor browser was used.</td><td class="status na">NOT EXECUTED</td></tr>
+                    <tr><td>QA-NE-12</td><td>Screen reader pass</td><td>No assistive-technology session was run. Aria attributes were only checked in markup and the menu state.</td><td class="status na">NOT EXECUTED</td></tr>
+                    <tr><td>QA-NE-13</td><td>Site with the development toolbar disabled</td><td>The environment was left on development. Production mode was not started.</td><td class="status na">NOT EXECUTED</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section aria-labelledby="defects-heading">
+        <h2 id="defects-heading">Defects</h2>
+        <h3>Fixed during this audit</h3>
+        <p><strong>DEF-01, medium.</strong> Pressing Enter in the block form activated Save draft because that was the first submit button. On a published block, that can change the status to draft. The form now starts with an unnamed Save button, so Enter keeps the status selected in the form. Save draft and Update still set the status when those buttons are used. Fixed in the block form. Confirmed by QA-ED-01 and QA-BR-24.</p>
+        <h3>Still open</h3>
+        <p><strong>DEF-02, medium on this local site and high if the same environment is exposed.</strong> QA-SEC-01 failed. The debug toolbar is injected into HTML responses, and the welcome page also prints that the environment is development. Remediation: set the application environment to production before the site is reachable beyond this machine, and confirm the toolbar is gone. This audit did not change that setting, because the local site is being used for development.</p>
+    </section>
+
+    <section aria-labelledby="final-heading">
+        <h2 id="final-heading">Final regression</h2>
+        <p>Re-run at 2026-10-27 18:30:59 UTC. Command: <code>phpunit --no-coverage</code>. Result: OK, 47 tests, 630 assertions, exit code 0. This matches the automated totals already recorded above. <code>spark migrate:status</code> still shows the same six applied migrations and none pending. <code>spark routes</code> shows every admin page behind adminAuth and every admin POST behind CSRF. No failed test needed a second repair in this pass.</p>
+        <p>Release status: ready with known limitations. The debug-toolbar failure remains an environment setting, not a new code failure. Production boot sets CI_DEBUG to false, which stops the toolbar.</p>
+    </section>
+
+    <section aria-labelledby="limits-heading">
+        <h2 id="limits-heading">Limitations</h2>
+        <ul>
+            <li>The public homepage is still the framework welcome page. It is noindex and absent from the sitemap. It is not a CMS block.</li>
+            <li>PHPUnit does not exercise the live MySQL database. Migration status was the live-database check.</li>
+            <li>Responsive checks covered the editor, navigation, blocks table, categories, public page, login, and settings at the widths named above. They are not a complete visual design review.</li>
+            <li>No performance, concurrency, backup, or restore test was run.</li>
+            <li>This report does not claim a search-ranking result.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Counts above are the complete set of results for this report. No password, token, or database credential is included.</p>
+    </footer>
+</main>
+</body>
+</html>

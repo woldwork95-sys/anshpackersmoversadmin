@@ -1,0 +1,208 @@
+{
+    "categories": [
+        {
+            "role": "active",
+            "fields": {
+                "name": "City moves",
+                "slug": "city-moves",
+                "description": "Category <b>description</b>",
+                "status": "active",
+                "meta_title": "City meta title",
+                "meta_description": "City meta description for search.",
+                "robots_index": "noindex",
+                "robots_follow": "nofollow",
+                "og_title": "City share title",
+                "og_description": "City share description."
+            },
+            "stored": {
+                "name": "City moves",
+                "slug": "city-moves",
+                "description": "Category <b>description</b>",
+                "status": "active",
+                "meta_title": "City meta title",
+                "meta_description": "City meta description for search.",
+                "robots_index": "noindex",
+                "robots_follow": "nofollow",
+                "og_title": "City share title",
+                "og_description": "City share description."
+            },
+            "api": {
+                "name": "City moves",
+                "slug": "city-moves",
+                "description": "Category description",
+                "status": "active",
+                "seo": {
+                    "title": "City meta title",
+                    "description": "City meta description for search.",
+                    "robots": "noindex, nofollow",
+                    "og_title": "City share title",
+                    "og_description": "City share description."
+                }
+            }
+        },
+        {
+            "role": "inactive",
+            "fields": {
+                "name": "Old routes",
+                "slug": "old-routes",
+                "description": "Hidden category",
+                "status": "inactive",
+                "meta_title": "Old routes title",
+                "meta_description": "This category must stay out of the API.",
+                "robots_index": "index",
+                "robots_follow": "follow",
+                "og_title": "Old routes share",
+                "og_description": "Old routes share text."
+            },
+            "stored": {
+                "name": "Old routes",
+                "slug": "old-routes",
+                "description": "Hidden category",
+                "status": "inactive",
+                "meta_title": "Old routes title",
+                "meta_description": "This category must stay out of the API.",
+                "robots_index": "index",
+                "robots_follow": "follow",
+                "og_title": "Old routes share",
+                "og_description": "Old routes share text."
+            }
+        }
+    ],
+    "posts": [
+        {
+            "role": "published",
+            "category": "city-moves",
+            "fields": {
+                "title": "Packing checklist",
+                "slug": "packing-checklist",
+                "author_name": "Neha",
+                "excerpt": "Checklist excerpt",
+                "content": "<p><strong>Pad the corners.</strong></p><script>alert(1)</script>",
+                "status": "published",
+                "meta_title": "Packing meta title",
+                "meta_description": "Packing meta description for the post.",
+                "robots_index": "index",
+                "robots_follow": "follow",
+                "og_title": "Packing share title",
+                "og_description": "Packing share description."
+            },
+            "stored": {
+                "title": "Packing checklist",
+                "slug": "packing-checklist",
+                "author_name": "Neha",
+                "excerpt": "Checklist excerpt",
+                "content": "<p><strong>Pad the corners.</strong></p>",
+                "status": "published",
+                "meta_title": "Packing meta title",
+                "meta_description": "Packing meta description for the post.",
+                "robots_index": "index",
+                "robots_follow": "follow",
+                "og_title": "Packing share title",
+                "og_description": "Packing share description."
+            },
+            "api": {
+                "title": "Packing checklist",
+                "slug": "packing-checklist",
+                "excerpt": "Checklist excerpt",
+                "author": "Neha",
+                "status": "published",
+                "content": "<p><strong>Pad the corners.</strong></p>",
+                "category": {
+                    "name": "City moves",
+                    "slug": "city-moves"
+                },
+                "seo": {
+                    "title": "Packing meta title",
+                    "description": "Packing meta description for the post.",
+                    "robots": "index, follow",
+                    "og_title": "Packing share title",
+                    "og_description": "Packing share description."
+                }
+            }
+        },
+        {
+            "role": "draft",
+            "category": "city-moves",
+            "fields": {
+                "title": "Hidden draft",
+                "slug": "hidden-draft",
+                "author_name": "Neha",
+                "excerpt": "Draft excerpt",
+                "content": "<p>Not public</p>",
+                "status": "draft",
+                "meta_title": "Draft meta title",
+                "meta_description": "Draft meta description."
+            },
+            "stored": {
+                "title": "Hidden draft",
+                "slug": "hidden-draft",
+                "author_name": "Neha",
+                "excerpt": "Draft excerpt",
+                "content": "<p>Not public</p>",
+                "status": "draft",
+                "meta_title": "Draft meta title",
+                "meta_description": "Draft meta description.",
+                "published_at": null
+            }
+        },
+        {
+            "role": "published-on-inactive",
+            "category": "old-routes",
+            "fields": {
+                "title": "Closed route note",
+                "slug": "closed-route-note",
+                "author_name": "Aman",
+                "excerpt": "Kept in admin only beside an inactive category.",
+                "content": "<p>Still a published post.</p>",
+                "status": "published"
+            },
+            "stored": {
+                "title": "Closed route note",
+                "slug": "closed-route-note",
+                "author_name": "Aman",
+                "excerpt": "Kept in admin only beside an inactive category.",
+                "content": "<p>Still a published post.</p>",
+                "status": "published"
+            },
+            "api": {
+                "title": "Closed route note",
+                "slug": "closed-route-note",
+                "excerpt": "Kept in admin only beside an inactive category.",
+                "author": "Aman",
+                "status": "published",
+                "content": "<p>Still a published post.</p>",
+                "category": {
+                    "name": "",
+                    "slug": ""
+                }
+            }
+        }
+    ],
+    "rejected": [
+        {
+            "type": "category",
+            "field": "meta_description",
+            "limit": 300,
+            "fields": {
+                "name": "Too long category",
+                "slug": "too-long-category",
+                "description": "Short",
+                "status": "active",
+                "meta_description": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            }
+        },
+        {
+            "type": "post",
+            "category": "city-moves",
+            "field": "meta_description",
+            "limit": 300,
+            "fields": {
+                "title": "Too long post",
+                "slug": "too-long-post",
+                "content": "<p>Body</p>",
+                "status": "published",
+                "meta_description": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            }
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+LIVE WEBSITE SETUP (cPanel, Hinglish)
+=====================================
+
+Current deployment path
+-----------------------
+
+The main website at https://www.anshpackersmovers.com/ is already serving the
+public business site. Do not change that domain's Document Root to the admin
+project's public folder.
+
+The admin app is currently reached under /admin/public/. To keep that URL:
+
+1. In cPanel File Manager, extract the ZIP into the existing admin project
+   folder, for example /home/CPANEL_USER/public_html/admin. Keep app, system,
+   vendor, writable, public and spark together. The ZIP's root `.htaccess`
+   permits web requests only through `public/`; keep it in place. The main
+   site's Document Root must stay unchanged.
+2. Create `.env` in the project root (for this layout, the admin folder),
+   not in its public folder. Show hidden files in File Manager if needed.
+   The ZIP intentionally contains neither `env` nor `.env`.
+3. Configure the live URL and cPanel database values in `.env`:
+
+   CI_ENVIRONMENT = production
+   app.baseURL = 'https://www.anshpackersmovers.com/admin/public/'
+   app.indexPage = ''
+   app.forceGlobalSecureRequests = true
+   database.default.hostname = localhost
+   database.default.database = 'CPANEL_USER_database'
+   database.default.username = 'CPANEL_USER_dbuser'
+   database.default.password = 'YOUR_DATABASE_PASSWORD'
+   database.default.DBDriver = MySQLi
+   database.default.port = 3306
+   ADMIN_INITIAL_PASSWORD = 'YOUR_UNIQUE_ADMIN_PASSWORD'
+
+   The baseURL must end with `/admin/public/` for the current layout. cPanel
+   prefixes MySQL database and user names with the account name. Keep the
+   database password and admin password private.
+4. In cPanel > MultiPHP Manager, select PHP 8.2+ and enable intl, mbstring and
+   mysqli. Ensure PHP can write to writable and its cache, logs, session and
+   uploads folders.
+5. In cPanel Terminal/SSH, go to the admin project root and run:
+
+   php spark migrate --all
+   php spark db:seed AdminSeeder
+
+   The seeder creates or resets username `admin` with email
+   `rohit123@gmail.com` and the password from `ADMIN_INITIAL_PASSWORD`. Remove
+   that password line from `.env` after seeding.
+6. Open https://www.anshpackersmovers.com/admin/public/ . It should redirect
+   to https://www.anshpackersmovers.com/admin/public/admin/login. Use the same
+   admin email or username and the password used in the seed step.
+
+The current subfolder layout keeps `/public/` visible in the URL. For a cleaner
+and safer long-term setup, create an admin subdomain in cPanel and set its
+Document Root directly to the project's `public` folder, with app, system,
+vendor and writable outside the web root. Then set `app.baseURL` to that
+subdomain's HTTPS origin with a trailing slash. Do not point the main domain's
+Document Root at this admin project.
+
+Project folders
+---------------
+- app: application code, controllers, views, configuration, migrations and seeds.
+- public: web entry point, CSS/JS, uploads and rewrite rules.
+- system: CodeIgniter framework.
+- vendor: Composer runtime dependencies.
+- writable: runtime cache, logs and sessions; PHP needs write access.
+- spark: CLI commands for migrations and database seeding.
+
+The live ZIP excludes `.git`, tests, build output, local environment files and
+old logs/cache/sessions. Do not remove app, system or vendor files from it.

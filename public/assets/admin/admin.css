@@ -531,3 +531,12 @@ input:focus, select:focus, textarea:focus {
 @media (prefers-reduced-motion: reduce) {
     .sidebar { transition: none; }
 }
+
+@media (min-width: 768px) {
+    .sidebar {
+        position: sticky;
+        top: 0;
+        align-self: flex-start;
+        height: 100vh;
+    }
+}

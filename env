@@ -14,16 +14,18 @@
 # ENVIRONMENT
 #--------------------------------------------------------------------
 
-# CI_ENVIRONMENT = production
+CI_ENVIRONMENT = production
 
 #--------------------------------------------------------------------
 # APP
 #--------------------------------------------------------------------
 
-# app.baseURL = ''
+app.baseURL = 'https://www.anshpackersmovers.com/admin/public/'
+# Remove index.php from generated URLs when the public/.htaccess rewrite is enabled.
+app.indexPage = ''
 # If you have trouble with `.`, you could also use `_`.
 # app_baseURL = ''
-# app.forceGlobalSecureRequests = false
+app.forceGlobalSecureRequests = true
 # app.CSPEnabled = false
 
 #--------------------------------------------------------------------

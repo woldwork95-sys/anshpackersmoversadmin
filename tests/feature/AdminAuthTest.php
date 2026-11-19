@@ -1,10 +1,12 @@
 <?php
 
+use App\Database\Seeds\AdminSeeder;
 use App\Libraries\AdminAuthenticator;
 use App\Models\AdminModel;
 use CodeIgniter\Test\CIUnitTestCase;
 use CodeIgniter\Test\DatabaseTestTrait;
 use CodeIgniter\Test\FeatureTestTrait;
+use Config\Database;
 use Config\Services;
 
 /**
@@ -43,6 +45,54 @@ final class AdminAuthTest extends CIUnitTestCase
         $result->assertSee('Password');
         $result->assertSee('csrf_test_name');
         $result->assertDontSee($this->storedHash());
+    }
+
+    public function testAppRootOpensAdminLogin(): void
+    {
+        $result = $this->get('/');
+
+        $result->assertRedirectTo(site_url('admin/login'));
+    }
+
+    public function testSeederSetsConfiguredPasswordForExistingAdmin(): void
+    {
+        $key             = 'ADMIN_INITIAL_PASSWORD';
+        $password        = 'New-Admin-Password-2026';
+        $previousEnv     = $_ENV[$key] ?? null;
+        $hadEnv          = array_key_exists($key, $_ENV);
+        $previousServer  = $_SERVER[$key] ?? null;
+        $hadServer       = array_key_exists($key, $_SERVER);
+        $previousProcess = getenv($key);
+
+        $_ENV[$key]    = $password;
+        $_SERVER[$key] = $password;
+        putenv($key . '=' . $password);
+
+        try {
+            (new AdminSeeder(config(Database::class), $this->db))->run();
+
+            $admin = model(AdminModel::class)->findByIdentity('admin');
+            $this->assertNotNull($admin);
+            $this->assertTrue(password_verify($password, (string) $admin['password_hash']));
+        } finally {
+            if ($hadEnv) {
+                $_ENV[$key] = $previousEnv;
+            } else {
+                unset($_ENV[$key]);
+            }
+
+            if ($hadServer) {
+                $_SERVER[$key] = $previousServer;
+            } else {
+                unset($_SERVER[$key]);
+            }
+
+            if ($previousProcess === false) {
+                putenv($key);
+            } else {
+                putenv($key . '=' . $previousProcess);
+            }
+        }
     }
 
     public function testValidLogin(): void

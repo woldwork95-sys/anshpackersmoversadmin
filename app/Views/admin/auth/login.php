@@ -126,7 +126,7 @@
             <input id="password" name="password" type="password" value="" autocomplete="current-password" maxlength="255" required>
             <button type="submit">Sign in</button>
         </form>
-        <a class="back" href="<?= site_url('/') ?>">Back to site</a>
+        <a class="back" href="<?= site_url('blog') ?>">Back to site</a>
     </main>
 </body>
 </html>
